@@ -1,4 +1,4 @@
-package conditionals_loops;
+package conditionals_loops.basic_java_programs;
 
 import java.util.*;
 
