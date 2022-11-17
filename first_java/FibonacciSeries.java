@@ -11,8 +11,9 @@ public class FibonacciSeries {
     System.out.println(0 + " ");
     for (int i = 0; i < limit; i++) {
       System.out.println(first + " ");
+      int temp = first;
       first = second;
-      second = first + second;
+      second += temp;
     }
     input.close();
   }
