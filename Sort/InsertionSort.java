@@ -1,13 +1,13 @@
 class Solution {
     // Please change the array in-place
-    public void insertionSort(int arr[]) {
+    public void insertionSort(int nums[]) {
         // code here
-        for (int i = 0; i < arr.length - 1; i++) {
+        for (int i = 0; i < nums.length - 1; i++) {
             for (int j = i+1; j > 0; j--) {
-                if (arr[j-1] <= arr[j]) {
+                if (nums[j-1] <= nums[j]) {
                     break;
                 }
-                swap(arr, j-1, j);
+                swap(nums, j-1, j);
             }
         }
     }
