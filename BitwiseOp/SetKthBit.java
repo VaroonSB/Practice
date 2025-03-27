@@ -4,6 +4,6 @@ class Solution {
     }
 
     static int resetKthBit(int n, int k) {
-        return n & (1 << (k));
+        return n & (~(1 << (k)));
     }
 }
