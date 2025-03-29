@@ -10,3 +10,10 @@ class Solution {
         return count;
     }
 }
+
+/**
+ * Other Approaches
+ * 1. Interger.bitCount(n)
+ * 2. n & (n-1) -> removes right most set bit. Instead of gointhrough each bit,
+ * counting while removing right most set bit is efficient.
+ */
