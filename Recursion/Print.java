@@ -12,6 +12,7 @@ class Main {
     }
 }
 
+// wrong
 class Main {
     public static void main(String[] args) {
         print(10, 1);
@@ -23,5 +24,19 @@ class Main {
         }
         System.out.println(i + " ");
         print(n, i+1);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        print(10);
+    }
+
+    static void print(int n) {
+        if (n == 0) {
+            return;
+        }
+        print(n-1);
+        System.out.println(n + " ");
     }
 }
