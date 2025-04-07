@@ -31,3 +31,37 @@ class Main {
         arr[b] = temp;
     }
 }
+
+import java.util.*;
+
+class Main {
+
+    static int[] arr = {9, 5, 1, 4, 2};
+
+    public static void main(String[] args) {
+        bubbleSort(1, 0);
+        System.out.print(Arrays.toString(arr));
+    }
+
+    static void bubbleSort(int pass, int index) {
+
+        if(pass == arr.length - 1) {
+            return;
+        }
+
+        if (index < (arr.length - pass)) {
+            if (arr[index] > arr[index + 1]) {
+                swap(arr, index, index+1);
+            }
+            bubbleSort(pass, index+1);
+        } else {
+            bubbleSort(pass + 1, 0);
+        }
+    }
+
+    static void swap(int[] arr, int a, int b) {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+}
