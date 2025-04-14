@@ -37,3 +37,24 @@ class Main {
         }
     }
 }
+
+class Main {
+    public static void main(String[] args) {
+        System.out.print(skipAChar("basfbacab"));
+    }
+
+    static String skipAChar(String str) {
+
+        if (str.isEmpty()) {
+            return "";
+        }
+
+        char ch = str.charAt(0);
+
+        if (ch == 'a') {
+            return skipAChar(str.substring(1));
+        } else {
+            return ch + skipAChar(str.substring(1));
+        }
+    }
+}
