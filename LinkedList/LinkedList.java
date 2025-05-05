@@ -80,6 +80,18 @@ class LinkedList {
         newNode.next = temp.next;
         temp.next = newNode;
     }
+
+    int get(int index) {
+        Node temp = head;
+
+        int i = 0;
+        while (temp.next != null && i < index) {
+            temp = temp.next;
+            i++;
+        }
+
+        return temp.data;
+    }
 }
 
 class Main {
@@ -101,5 +113,8 @@ class Main {
 
         list.insert(0, 10);
         list.print();
+
+        System.out.println(list.get(3));
+        System.out.println(list.get(0));
     }
 }
