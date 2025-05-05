@@ -65,6 +65,10 @@ class LinkedList {
     }
 
     void insert(int index, int data) {
+        if (index == 0) {
+            addFirst(data);
+            return;
+        }
         Node newNode = new Node(data);
         Node temp = head;
 
