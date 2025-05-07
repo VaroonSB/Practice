@@ -17,12 +17,7 @@ class Solution {
         ListNode current = head;
         while (current.next != null) {
             if (current.val == current.next.val) {
-                if (current.next.next == null) {
-                    current.next = null;
-                    continue;
-                } else {
-                    current.next = current.next.next;
-                }
+                current.next = current.next.next;
             } else {
                 current = current.next;
             }
