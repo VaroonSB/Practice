@@ -52,3 +52,53 @@ public class Solution {
         return slow; // or fast;
     }
 }
+
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode(int x) {
+ * val = x;
+ * next = null;
+ * }
+ * }
+ */
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
+        // Handle edge cases: empty list or a list with a single node.
+        if (head == null || head.next == null) {
+            return null;
+        }
+
+        ListNode slow = head;
+        ListNode fast = head;
+        boolean hasCycle = false;
+
+        // Phase 1: Detect the cycle
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                hasCycle = true;
+                break; // Cycle detected, break out of the loop
+            }
+        }
+
+        // If the loop finished because fast reached null, there is no cycle.
+        if (!hasCycle) {
+            return null;
+        }
+
+        // Phase 2: Find the start of the cycle
+        // Reset one pointer to the head, keep the other at the meeting point.
+        slow = head;
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        // When they meet again, that's the starting node of the cycle.
+        return slow;
+    }
+}
