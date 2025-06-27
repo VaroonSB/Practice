@@ -32,3 +32,36 @@ class Solution {
         return result;
     }
 }
+
+
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> list = new ArrayList<>();
+
+        backtrack(list, new ArrayList(), nums, new boolean[nums.length]);
+
+        return list;
+    }
+
+    static void backtrack(List<List<Integer>> result, List<Integer> process, int[] nums, boolean[] used) {
+        if (process.size() == nums.length) {
+            result.add(new ArrayList(process));
+            return;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+
+            if (used[i]) {
+                continue;
+            }
+
+            process.add(nums[i]);
+            used[i] = true;
+
+            backtrack(result, process, nums, used);
+
+            process.remove(process.size() - 1);
+            used[i] = false;
+        }
+    }
+}
